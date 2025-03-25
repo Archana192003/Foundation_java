@@ -71,7 +71,7 @@ public  class Customerdaoimpl implements CustomerDao {
  
     @Override
     public boolean registerCustomer(Customermodel customer) {
-        String query = "INSERT INTO Customer (FirstName, LastName, Email, PhoneNumber, Address, Username, Password, RegistrationDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Customer (FirstName, LastName, Email, PhoneNumber, Address, Username, PasswordHash, RegistrationDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = ConnectionHelper.getConnection();
              PreparedStatement ps = conn.prepareStatement(query)) {
  
